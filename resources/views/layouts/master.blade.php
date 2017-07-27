@@ -71,10 +71,55 @@
             </div>
         </nav>
 
-        @yield('content')
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <h3 class="page-header">Welcome,<br>{{Auth::user()->emp_name}}</h3>
+                    <ul class="nav nav-pills nav-stacked nav-sidebar">
+                        <li class="active"><a data-toggle="pill" href="#request">Request for Leave</a></li>
+                        <li><a data-toggle="pill" href="#leaves">My Leaves</a></li>
+                        <li><a data-toggle="pill" href="#dash">Dashboard</a></li>
+                        @if(Auth::user())
+                        <li><a data-toggle="pill" href="">Edit Records</a></li>
+                        <li><a data-toggle="pill" href="">Add Record</a></li>
+                        @endif
+                    </ul>
+                </div>
+                <div class="col-sm-9 col-md-10 col-md-offset-2 main">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
+
+
+
+
+        
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+    <script>    
+    $('#from').datepicker({
+        startDate: new Date(), //if leave type is sick leave
+        //startDate: '+14d', //if leave type is vacation
+        todayHighlight: true,
+        autoclose: true
+    });
+    $('#to').datepicker({
+        startDate: new Date(),
+        //startDate: '+14d', //if leave type is vacation
+        todayHighlight: true,
+        autoclose: true
+    });
+    </script>
+
 </body>
 </html>
