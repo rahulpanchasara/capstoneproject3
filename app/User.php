@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'badge','emp_name', 'email', 'password','leave_bal','role','emp_status'
     ];
 
     /**
@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    function showUsers(){
+        return $this->hasMany('App\LeaveRequest');
+    }
+
+    function fileRequest(){
+        
+    }
+
 }

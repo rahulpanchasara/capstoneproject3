@@ -1,0 +1,27 @@
+php artisan list
+php artisan help migrate
+php artisan make:controller NamesController (controller name should be plural)
+php artisan make:model Name -m -c (-c will also make a controller) (model name should be singular)
+php artisan make:migration add_names_to_db --table=names (be descriptive with the table name) (make sure to edit the columns in the table, if you've forgotten run php artisan migrate:rollback)
+php artisan migrate (to run the migration file)
+php artisan tinker (to interact with the database)
+
+eloquent object relational mapper (eloquent ORM)
+you can also create raw sql query*
+but eloquent will make it cleaner
+
+example of inserting data to a table column
+Use App\Name; (to call/bring the model file from app folder in to the controller)
+$todo=new Name;
+$todo->title='Some Name';
+$todo->save();
+(usually this is written in the controller)
+
+blade template engine: control structures, this is where you put the html tags, php tags* so when saving a file save it with <filename>.blade.php
+folder path: resources\views\layouts\app.blade.php
+usually this will show up once you have entered:
+php artisan make:auth
+
+make pages controller~
+
+{{config('page name','alternate name incase the name or title does not work')}}

@@ -81,9 +81,9 @@
                         <li class="active"><a data-toggle="pill" href="#request">Request for Leave</a></li>
                         <li><a data-toggle="pill" href="#leaves">My Leaves</a></li>
                         <li><a data-toggle="pill" href="#dash">Dashboard</a></li>
-                        @if(Auth::user())
-                        <li><a data-toggle="pill" href="">Edit Records</a></li>
-                        <li><a data-toggle="pill" href="">Add Record</a></li>
+                        @if(Auth::user()->role=='admin')
+                        <li><a data-toggle="pill" href="#edit">Edit Records</a></li>
+                        <li><a data-toggle="pill" href="#add">Add Record</a></li>
                         @endif
                     </ul>
                 </div>

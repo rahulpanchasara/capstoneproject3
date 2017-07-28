@@ -4,8 +4,8 @@
 <div class="tab-content">
     <div id="request" class="tab-pane fade in active">
         <h1 class="page-header">Request for Leave</h1>
-        <div class="col-sm-12 text-center">
-            <table class="table table-bordered">
+        <div class="text-center">
+            <table class="table table-bordered table-responsive">
                 <tbody>
                 <tr>
                     <th class="col-sm-2">Employee Badge:</th>
@@ -19,8 +19,8 @@
                     <th class="col-sm-2">Employment Status:</th>
                     <td class="col-sm-5">{{$current_user->emp_status}}</td>
                 </tr>
-    <div class="bootstrap-iso">
-        <form method="POST" action=''>
+        <form method="POST" action='{{ url("/file_leave/$current_user->id") }}'>
+        {{ csrf_field() }}
                 <tr>
                     <th class="col-sm-2">Vacation Leave Credits:</th>
                     <td class="col-sm-3">{{$current_user->leave_bal}}</td> 
@@ -67,7 +67,6 @@
                     </td>
                 </tr>
         </form>
-    </div>
                 </tbody>
             </table>
         </div>
@@ -78,10 +77,49 @@
 
     <div id="leaves" class="tab-pane fade">
         <h1 class="page-header">My Leaves</h1>
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th class="col-sm-1">Badge</th>
+                    <th class="col-sm-3">Name</th>
+                    <th class="col-sm-1">From</th>
+                    <th class="col-sm-1">To</th>
+                    <th class="col-sm-1">Type</th>
+                    <th class="col-sm-2">Reason</th>
+                    <th class="col-sm-1">Status</th>
+                    @if(Auth::user()->role=='admin')
+                    <th class="col-sm-2">Action</th>
+                    @endif
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-sm-1"></td>
+                    <td class="col-sm-3"></td>
+                    <td class="col-sm-1"></td>
+                    <td class="col-sm-1"></td>
+                    <td class="col-sm-1"></td>
+                    <td class="col-sm-2"></td>
+                    <td class="col-sm-1"></td>
+                    @if(Auth::user()->role=='admin')
+                    <td class="col-sm-2"><button>Approve</button><button>Reject</button></td>
+                    @endif
+                </tr>
+            </tbody>
+        </table>
+
     </div>
 
     <div id="dash" class="tab-pane fade">
         <h1 class="page-header">Dashboard</h1>
+    </div>
+
+    <div id="edit" class="tab-pane fade">
+        <h1 class="page-header">Edit Records</h1>
+    </div>
+
+    <div id="add" class="tab-pane fade">
+        <h1 class="page-header">Add Records</h1>
     </div>
 
 

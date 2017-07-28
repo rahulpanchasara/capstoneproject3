@@ -1,0 +1,2 @@
+https://sourceforge.net/projects/lams/
+https://laracasts.com/series/laravel-from-scratch-2017
