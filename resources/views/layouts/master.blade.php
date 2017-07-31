@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title')</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -31,13 +31,22 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Leave') }}
+                        URIN Good Company
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav"></ul>
+                    <ul class="nav navbar-nav visible-xs">
+                        <li class="active"><a data-toggle="pill" href="#dash">Dashboard</a></li>
+                        @if(Auth::user()->role=='admin')
+                        <li><a data-toggle="pill" href="#edit">Edit Records</a></li>
+                        <li><a data-toggle="pill" href="#add">Add Record</a></li>
+                        @else
+                        <li><a data-toggle="pill" href="#request">Request for Leave</a></li>
+                        <li><a data-toggle="pill" href="#leaves">My Leaves</a></li>
+                        @endif
+                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -78,12 +87,13 @@
                 <div class="col-sm-3 col-md-2 sidebar">
                     <h3 class="page-header">Welcome,<br>{{Auth::user()->emp_name}}</h3>
                     <ul class="nav nav-pills nav-stacked nav-sidebar">
-                        <li class="active"><a data-toggle="pill" href="#request">Request for Leave</a></li>
-                        <li><a data-toggle="pill" href="#leaves">My Leaves</a></li>
-                        <li><a data-toggle="pill" href="#dash">Dashboard</a></li>
+                        <li class="active"><a data-toggle="pill" href="#dash">Dashboard</a></li>
                         @if(Auth::user()->role=='admin')
                         <li><a data-toggle="pill" href="#edit">Edit Records</a></li>
                         <li><a data-toggle="pill" href="#add">Add Record</a></li>
+                        @else
+                        <li><a data-toggle="pill" href="#request">Request for Leave</a></li>
+                        <li><a data-toggle="pill" href="#leaves">My Leaves</a></li>
                         @endif
                     </ul>
                 </div>

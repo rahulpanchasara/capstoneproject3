@@ -28,7 +28,7 @@ class User extends Authenticatable
     ];
 
     function showUsers(){
-        return $this->hasMany('App\LeaveRequest');
+        return $this->hasMany('App\Leave');
     }
 
     function fileRequest(){
