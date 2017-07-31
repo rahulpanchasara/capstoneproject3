@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
 use App\Leave;
+use App\User;
 use Auth;
 use Session;
 
@@ -15,7 +15,7 @@ class LeavesController extends Controller
         $this->middleware('auth');
     }
 
-    function submitLeave(Request $request, $id){
+    public function submitLeave(Request $request, $id){
     	$new_leave = new Leave();
         $new_leave->emp_id = Auth::user()->id;
     	$new_leave->from = date('Y-m-d', strtotime($request->from));
@@ -28,4 +28,15 @@ class LeavesController extends Controller
 
         return back();
     }
+
+    public function showLeaves(){
+        $leaves = Leave::latest()->get();
+        $current_user = Auth::user();
+        // $current_user = Auth::user()->id;
+        // $leaves = DB::table('leave_requests');
+        
+        return view('/home',compact('leaves','current_user'));
+
+    }
+
 }

@@ -27,12 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    function showUsers(){
+    function employeeLeave(){
         return $this->hasMany('App\Leave');
     }
 
-    function fileRequest(){
-        
-    }
 
 }

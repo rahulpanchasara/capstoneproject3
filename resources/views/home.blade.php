@@ -17,12 +17,13 @@
             <thead>
                 <tr>
                     <th class="col-sm-1">Badge</th>
-                    <th class="col-sm-3">Name</th>
+                    <th class="col-sm-2">Name</th>
                     <th class="col-sm-1">From</th>
                     <th class="col-sm-1">To</th>
                     <th class="col-sm-1">Type</th>
                     <th class="col-sm-2">Reason</th>
                     <th class="col-sm-1">Status</th>
+                    <th class="col-sm-2">Created At</th>
                     @if(Auth::user()->role=='admin')
                     <th class="col-sm-1">Action</th>
                     @endif
@@ -31,22 +32,26 @@
             <tbody>
             <form method="POST" action=''>
             {{ csrf_field() }}
+            @foreach($leaves as $leave)
                 <tr>
                 
-                    <td class="col-sm-1"></td>
-                    <td class="col-sm-3"></td>
-                    <td class="col-sm-1"></td>
-                    <td class="col-sm-1"></td>
-                    <td class="col-sm-1"></td>
-                    <td class="col-sm-2"></td>
-                    <td class="col-sm-1"></td>
+                    <td class="col-sm-1">{{ $leave->badge }}</td>
+                    <td class="col-sm-2">{{ $leave->emp_name }}</td>
+
+                    <td class="col-sm-1">{{ $leave->from }}</td>
+                    <td class="col-sm-1">{{ $leave->to }}</td>
+                    <td class="col-sm-1">{{ $leave->type }}</td>
+                    <td class="col-sm-2">{{ $leave->reason }}</td>
+                    <td class="col-sm-1">{{ $leave->status }}</td>
+                    <td class="col-sm-2">{{ $leave->created_at }}</td>
                     @if(Auth::user()->role=='admin')
-                    <td class="col-sm-2">
+                    <td class="col-sm-1">
                         <button class="btn btn-primary">Approve</button><button class="btn btn-danger">Reject</button>
                     </td>
                     @endif
                 </tr>
             </form>
+            @endforeach
             </tbody>
         </table>
     </div>
@@ -153,6 +158,7 @@
                             <option>Sick</option>
                             <option>Maternity</option>
                             <option>Paternity</option>
+                            <option>Bereavement</option>
                         </select>
                     </div>
                     </td>
