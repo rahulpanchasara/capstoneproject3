@@ -40,7 +40,6 @@ class UsersController extends Controller
   public function editProfile($id, Request $request)
   {
     $edit_emp = User::find($id);
-    // dd($edit_emp = User::find($id));
     $edit_emp->emp_name = $request->ename;
     $edit_emp->email = $request->email;
     $edit_emp->password = bcrypt($request->pw1);
@@ -49,7 +48,7 @@ class UsersController extends Controller
     $edit_emp->leave_bal = $request->creds;
     $edit_emp->save();
 
-    Session::flash('message', 'Profile successfully updated');
+    Session::flash('alert', 'Profile successfully updated');
 
     return back();
   }
@@ -59,7 +58,7 @@ class UsersController extends Controller
     $employee_del = User::find($id);
     $employee_del->delete();
 
-    Session::flash('message', 'Employee successfully deleted from the database');
+    Session::flash('alert', 'Employee successfully deleted from the database');
 
     return back();
   }

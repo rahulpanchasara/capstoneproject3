@@ -62,7 +62,7 @@
     <!-- View for admin -->
     <div id="edit" class="tab-pane fade @if(isset($_GET['page'])) {{'in active'}} @endif">
         <h1 class="page-header">Edit Records</h1>
-        @if(Session::has('message'))
+        @if(Session::has('alert'))
             <div class="alert alert-success alert-dismissable fade in"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>{{ Session::get('message') }}</div>
         @endif
         <table class="table table-bordered table-responsive">
