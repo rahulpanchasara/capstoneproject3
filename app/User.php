@@ -27,11 +27,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    // $employee->leave or $users->leave
 
     public function leaves(){
         return $this->hasMany('App\Leave','emp_id');
     }
 
 
-}
+    function showUsers(){
+        return $this->hasMany('App\LeaveRequest');
+    }

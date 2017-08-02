@@ -7,6 +7,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+<<<<<<< HEAD
 
     <title>@yield('title')</title>
 
@@ -19,6 +20,14 @@
             margin-top: 60px;
         }*/
     </style>
+=======
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+>>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
 
 </head>
 <body>
@@ -37,7 +46,11 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
+<<<<<<< HEAD
                         URIN Good Company
+=======
+                        {{ config('app.name', 'Leave') }}
+>>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
                     </a>
                 </div>
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html {
   min-height: 100%;
   position: relative;
@@ -8,6 +9,8 @@ body {
 }
 
 
+=======
+>>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
 /* Navbar */
 .navbar {
   margin-bottom: 0;
@@ -26,7 +29,11 @@ body {
     left: 0;
     z-index: 1000;
     display: block;
+<<<<<<< HEAD
     padding: 0 20px 20px 20px;
+=======
+    padding: 20px;
+>>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     background-color: #fff;
@@ -59,11 +66,15 @@ body {
   .main {
     padding-right: 40px;
     padding-left: 40px;
+<<<<<<< HEAD
     padding-top: 40px;
+=======
+>>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
   }
 }
 .main .page-header {
   margin-top: 0;
+<<<<<<< HEAD
 }
 
 .page-header > a,
@@ -85,4 +96,6 @@ body {
 
 .container-fluid .text-muted {
   margin: 11px 0;
+=======
+>>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
 }
