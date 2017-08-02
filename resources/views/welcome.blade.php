@@ -71,7 +71,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Please login to file your leave
                 </div>
 
                 <div class="links">

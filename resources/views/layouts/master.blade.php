@@ -17,7 +17,9 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
 
@@ -38,9 +40,9 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav visible-xs">
-                        <li class="active"><a data-toggle="pill" href="#dash">Dashboard</a></li>
+                        <li class="@if(!isset($_GET['page'])) {{ 'active' }} @endif"><a data-toggle="pill" href="#dash">Dashboard</a></li>
                         @if(Auth::user()->role=='admin')
-                        <li><a data-toggle="pill" href="#edit">Edit Records</a></li>
+                        <li class="@if(isset($_GET['page'])) {{ 'active' }} @endif"><a data-toggle="pill" href="#edit">Edit Records</a></li>
                         <li><a data-toggle="pill" href="#add">Add Record</a></li>
                         @else
                         <li><a data-toggle="pill" href="#request">Request for Leave</a></li>
@@ -53,7 +55,6 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <!-- <li><a href="{{ route('register') }}">Register</a></li> -->
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -81,15 +82,15 @@
         </nav>
 
 
-
+        <!-- Side Bar -->
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
-                    <h3 class="page-header">Welcome,<br>{{Auth::user()->emp_name}}</h3>
+                    <h3 class="page-header"><a href="home">Welcome,<br>{{Auth::user()->emp_name}}</a></h3>
                     <ul class="nav nav-pills nav-stacked nav-sidebar">
-                        <li class="active"><a data-toggle="pill" href="#dash">Dashboard</a></li>
+                        <li class="@if(!isset($_GET['page'])) {{ 'active' }} @endif"><a data-toggle="pill" href="#dash">Dashboard</a></li>
                         @if(Auth::user()->role=='admin')
-                        <li><a data-toggle="pill" href="#edit">Edit Records</a></li>
+                        <li class="@if(isset($_GET['page'])) {{ 'active' }} @endif"><a data-toggle="pill" href="#edit">Edit Records</a></li>
                         <li><a data-toggle="pill" href="#add">Add Record</a></li>
                         @else
                         <li><a data-toggle="pill" href="#request">Request for Leave</a></li>
@@ -104,6 +105,12 @@
         </div>
 
 
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <p class="text-muted">Powered by Bootstrap.</p>
+            </div>
+        </footer>
 
 
         
@@ -111,6 +118,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://use.fontawesome.com/914230375d.js"></script>
 
     <!-- Bootstrap Date-Picker Plugin -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>

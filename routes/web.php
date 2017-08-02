@@ -21,6 +21,18 @@ Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('home', 'LeavesController@showLeaves');
 
+Route::post('submit_leave/{id}', 'LeavesController@submitLeave');
 
+Route::post('add_employee', 'UsersController@addEmployee');
 
-Route::post('/submit_leave/{id}', 'LeavesController@submitLeave');
+Route::post('show_employee/{id}', 'UsersController@showEmployee');
+
+Route::post('edit_profile/{id}', 'UsersController@editProfile');
+
+Route::get('del_employee/{id}', 'UsersController@deleteEmployee');
+
+Route::get('approve_leave/{id}', 'LeavesController@approveLeave');
+
+Route::get('deny_leave/{id}', 'LeavesController@denyLeave');
+
+Route::get('cancel_leave/{id}', 'LeavesController@cancelLeave');

@@ -1,3 +1,13 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+
 /* Navbar */
 .navbar {
   margin-bottom: 0;
@@ -16,7 +26,7 @@
     left: 0;
     z-index: 1000;
     display: block;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     background-color: #fff;
@@ -49,8 +59,30 @@
   .main {
     padding-right: 40px;
     padding-left: 40px;
+    padding-top: 40px;
   }
 }
 .main .page-header {
   margin-top: 0;
+}
+
+.page-header > a,
+.page-header > a:hover,
+.page-header > a:focus,
+.page-header > a:visited {
+  text-decoration: none;
+}
+
+.footer {
+  background-color: #fff;
+  border: 1px solid #d3e0e9;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 1030;
+}
+
+.container-fluid .text-muted {
+  margin: 11px 0;
 }
