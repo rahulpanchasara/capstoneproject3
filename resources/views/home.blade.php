@@ -62,9 +62,6 @@
     <!-- View for admin -->
     <div id="edit" class="tab-pane fade @if(isset($_GET['page'])) {{'in active'}} @endif">
         <h1 class="page-header">Edit Records</h1>
-        @if(Session::has('alert'))
-            <div class="alert alert-success alert-dismissable fade in"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>{{ Session::get('message') }}</div>
-        @endif
         <table class="table table-bordered table-responsive">
             <thead>
                 <tr>
@@ -92,18 +89,19 @@
                 {{ csrf_field() }}
                         <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="{{'#profile' . $employee->id}}"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
                 </form>
+
                     <!-- Modal -->
                     <div class="modal fade" id="{{'profile'.$employee->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <form method="POST" action='{{ url("edit_profile/$employee->id") }}'>
                             {{ csrf_field() }}
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h3>{{ $employee->emp_name }}</h3>
-                                    <p><strong>{{ $employee->badge }}</strong></p>
-                                </div>
-                                <div class="modal-body">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h3>{{ $employee->emp_name }}</h3>
+                                        <p><strong>{{ $employee->badge }}</strong></p>
+                                    </div>
+                                    <div class="modal-body">
                                         <div class="form-group">
                                             <label>Employee Name</label>
                                             <input type="text" class="form-control" name="ename" value="{{$employee->emp_name}}">
@@ -169,20 +167,20 @@
                                                 <option>Inactive</option>
                                             </select>
                                         </div>
-                                </div>
-                                <div class="modal-footer">
-
-                                <button class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save Changes</button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save Changes</button>
                             </form>
 
-                                @if($employee->role!='admin')
-                                    <a href='{{ url("del_employee/$employee->id") }}' class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete Profile</a>
-                                @endif
+                                    @if($employee->role!='admin')
+                                        <a href='{{ url("del_employee/$employee->id") }}' class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete Profile</a>
+                                    @endif
 
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
+                    
                     </td>
                 </tr>
             @endforeach
