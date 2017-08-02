@@ -37,7 +37,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        URIN Good Company
+                        URIN Good Company ^_^
 
                     </a>
                 </div>
