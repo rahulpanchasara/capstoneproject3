@@ -5,11 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<<<<<<< HEAD
         <title>URIN Good Company</title>
-=======
-        <title>Laravel</title>
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -68,18 +64,17 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
-<<<<<<< HEAD
+
                         <!-- <a href="{{ url('/register') }}">Register</a> -->
-=======
+
                         <a href="{{ url('/register') }}">Register</a>
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
+
                     @endif
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-<<<<<<< HEAD
                     Please login to file your leave
                 </div>
 
@@ -89,7 +84,6 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a> -->
-=======
                     Laravel
                 </div>
 
@@ -99,7 +93,7 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
+
                 </div>
             </div>
         </div>

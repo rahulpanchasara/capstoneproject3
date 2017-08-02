@@ -36,3 +36,4 @@ class User extends Authenticatable
     function showUsers(){
         return $this->hasMany('App\LeaveRequest');
     }
+}

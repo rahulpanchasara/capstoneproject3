@@ -8,11 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<<<<<<< HEAD
     <title>@yield('title')</title>
-=======
-    <title>{{ config('app.name', 'Laravel') }}</title>
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -21,13 +17,10 @@
 </head>
 <body>
     <div id="app">
-<<<<<<< HEAD
 
         <!-- Nav Bar -->
         <nav class="navbar navbar-default navbar-fixed-top">
-=======
-        <nav class="navbar navbar-default navbar-static-top">
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
+
             <div class="container-fluid">
                 <div class="navbar-header">
 
@@ -41,17 +34,15 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-<<<<<<< HEAD
+
                         URIN Good Company
-=======
-                        {{ config('app.name', 'Leave') }}
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
+
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-<<<<<<< HEAD
+
                     <ul class="nav navbar-nav visible-xs">
                         <li class="@if(!isset($_GET['page'])) {{ 'active' }} @endif"><a data-toggle="pill" href="#dash">Dashboard</a></li>
                         @if(Auth::user()->role=='admin')
@@ -62,19 +53,14 @@
                         <li><a data-toggle="pill" href="#leaves">My Leaves</a></li>
                         @endif
                     </ul>
-=======
-                    <ul class="nav navbar-nav"></ul>
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
-<<<<<<< HEAD
-=======
-                            <!-- <li><a href="{{ route('register') }}">Register</a></li> -->
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
+
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -102,7 +88,7 @@
         </nav>
 
 
-<<<<<<< HEAD
+
         <!-- Side Bar -->
         <div class="container-fluid">
             <div class="row">
@@ -116,20 +102,6 @@
                         @else
                         <li><a data-toggle="pill" href="#request">Request for Leave</a></li>
                         <li><a data-toggle="pill" href="#leaves">My Leaves</a></li>
-=======
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-3 col-md-2 sidebar">
-                    <h3 class="page-header">Welcome,<br>{{Auth::user()->emp_name}}</h3>
-                    <ul class="nav nav-pills nav-stacked nav-sidebar">
-                        <li class="active"><a data-toggle="pill" href="#request">Request for Leave</a></li>
-                        <li><a data-toggle="pill" href="#leaves">My Leaves</a></li>
-                        <li><a data-toggle="pill" href="#dash">Dashboard</a></li>
-                        @if(Auth::user()->role=='admin')
-                        <li><a data-toggle="pill" href="#edit">Edit Records</a></li>
-                        <li><a data-toggle="pill" href="#add">Add Record</a></li>
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
                         @endif
                     </ul>
                 </div>
@@ -140,15 +112,13 @@
         </div>
 
 
-<<<<<<< HEAD
         <!-- Footer -->
         <footer class="footer">
             <div class="container-fluid">
                 <p class="text-muted">Powered by Bootstrap.</p>
             </div>
         </footer>
-=======
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
+
 
 
         
@@ -156,10 +126,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-<<<<<<< HEAD
     <script src="https://use.fontawesome.com/914230375d.js"></script>
-=======
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
+
 
     <!-- Bootstrap Date-Picker Plugin -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>

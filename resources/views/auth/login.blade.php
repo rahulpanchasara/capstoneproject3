@@ -1,12 +1,9 @@
 @extends('layouts.app')
 
-<<<<<<< HEAD
 @section('title')
     Employee Login
 @endsection
 
-=======
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
 @section('content')
 <div class="container">
     <div class="row">

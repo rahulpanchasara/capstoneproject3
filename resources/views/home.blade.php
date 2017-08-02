@@ -1,6 +1,5 @@
 @extends('layouts.master')
 
-<<<<<<< HEAD
 @section('title')
     Home
 @endsection
@@ -97,16 +96,14 @@
                     <div class="modal fade" id="{{'profile'.$employee->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <form method="POST" action='{{ url("edit_profile/$employee->id") }}'>
+                            {{ csrf_field() }}
                             <div class="modal-content">
-
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     <h3>{{ $employee->emp_name }}</h3>
                                     <p><strong>{{ $employee->badge }}</strong></p>
                                 </div>
                                 <div class="modal-body">
-                            
-                            {{ csrf_field() }}
                                         <div class="form-group">
                                             <label>Employee Name</label>
                                             <input type="text" class="form-control" name="ename" value="{{$employee->emp_name}}">
@@ -191,7 +188,6 @@
             @endforeach
             </tbody>
         </table>
-
         {{ $employees->links() }}
     </div>
 
@@ -241,13 +237,6 @@
         <div class="text-center">
         <form method="POST" action='{{ url("submit_leave/$current_user->id") }}'>
         {{ csrf_field() }}
-=======
-@section('content')
-<div class="tab-content">
-    <div id="request" class="tab-pane fade in active">
-        <h1 class="page-header">Request for Leave</h1>
-        <div class="text-center">
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
             <table class="table table-bordered table-responsive">
                 <tbody>
                 <tr>
@@ -262,11 +251,6 @@
                     <th class="col-sm-2">Employment Status:</th>
                     <td class="col-sm-5">{{$current_user->emp_status}}</td>
                 </tr>
-<<<<<<< HEAD
-=======
-        <form method="POST" action='{{ url("/file_leave/$current_user->id") }}'>
-        {{ csrf_field() }}
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
                 <tr>
                     <th class="col-sm-2">Vacation Leave Credits:</th>
                     <td class="col-sm-3">{{$current_user->leave_bal}}</td> 
@@ -278,10 +262,7 @@
                             <option>Sick</option>
                             <option>Maternity</option>
                             <option>Paternity</option>
-<<<<<<< HEAD
                             <option>Bereavement</option>
-=======
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
                         </select>
                     </div>
                     </td>
@@ -303,11 +284,7 @@
                     <th class="col-sm-5 text-center">Reason: </th>
                     <td>
                         <div class="col-sm-8 col-sm-offset-2">
-<<<<<<< HEAD
                         <input type="text" class="form-control" id="reason" name="reason" placeholder="Limit reason to 140 characters" required>
-=======
-                        <input type="text" class="form-control" id="reason" name="reason" placeholder="Limit reason to 140 characters">
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
                         <div class="col-sm-6 col-sm-offset-3">
                     </td>
                 </tr>
@@ -317,62 +294,15 @@
                 <tbody>
                 <tr>
                     <td>
-<<<<<<< HEAD
                         <button class="btn btn-primary" id="file" name="file"><i class="fa fa-floppy-o" aria-hidden="true"></i> Submit</button>
-=======
-                        <button class="btn btn-primary" id="file" name="file">Submit</button>
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
                     </td>
                 </tr>
         </form>
                 </tbody>
             </table>
         </div>
-        @if(Session::has('message'))
-            <div class="alert alert-success">{{ Session::get('message') }}</div>
-        @endif
     </div>
 
-    <div id="leaves" class="tab-pane fade">
-        <h1 class="page-header">My Leaves</h1>
-        <table class="table table-bordered table-responsive">
-            <thead>
-                <tr>
-                    <th class="col-sm-1">Badge</th>
-                    <th class="col-sm-3">Name</th>
-                    <th class="col-sm-1">From</th>
-                    <th class="col-sm-1">To</th>
-                    <th class="col-sm-1">Type</th>
-                    <th class="col-sm-2">Reason</th>
-                    <th class="col-sm-1">Status</th>
-                    @if(Auth::user()->role=='admin')
-                    <th class="col-sm-2">Action</th>
-                    @endif
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="col-sm-1"></td>
-                    <td class="col-sm-3"></td>
-                    <td class="col-sm-1"></td>
-                    <td class="col-sm-1"></td>
-                    <td class="col-sm-1"></td>
-                    <td class="col-sm-2"></td>
-                    <td class="col-sm-1"></td>
-                    @if(Auth::user()->role=='admin')
-                    <td class="col-sm-2"><button>Approve</button><button>Reject</button></td>
-                    @endif
-                </tr>
-            </tbody>
-        </table>
-
-    </div>
-
-    <div id="dash" class="tab-pane fade">
-        <h1 class="page-header">Dashboard</h1>
-    </div>
-
-<<<<<<< HEAD
     <div id="leaves" class="tab-pane fade">
         <h1 class="page-header">My Leaves</h1>
         <h2 class="sub-header">{{ $current_user->emp_name }}</h2>
@@ -408,16 +338,5 @@
         </table>
     </div>
 
-=======
-    <div id="edit" class="tab-pane fade">
-        <h1 class="page-header">Edit Records</h1>
-    </div>
-
-    <div id="add" class="tab-pane fade">
-        <h1 class="page-header">Add Records</h1>
-    </div>
-
-
->>>>>>> 596b3b1dc7a512db7eb1ede9c8d52e11ca705153
 </div>
 @endsection
