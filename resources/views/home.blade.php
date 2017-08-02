@@ -112,11 +112,11 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input type="password" class="form-control" name="pw1" value="{{$employee->password}}">
+                                            <input type="password" class="form-control" name="pw1" value="secret">
                                         </div>
                                         <div class="form-group">
                                             <label>Confirm password</label>
-                                            <input type="password" class="form-control" name="pw2" value="{{ $employee-> password }}">
+                                            <input type="password" class="form-control" name="pw2" value="secret">
                                         </div>
                                         <div class="form-group">
                                             <label>Vacation Leave Balance</label>
@@ -180,7 +180,7 @@
                                 </div>
                         </div>
                     </div>
-                    
+
                     </td>
                 </tr>
             @endforeach
