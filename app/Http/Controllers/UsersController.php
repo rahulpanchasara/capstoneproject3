@@ -32,7 +32,6 @@ class UsersController extends Controller
     $employee = User::find($id);
     $employees = User::all();
     $leaves = Leave::latest()->get();
-    
 
     return view('/home',compact('leaves', 'employees','employee'));
   }
