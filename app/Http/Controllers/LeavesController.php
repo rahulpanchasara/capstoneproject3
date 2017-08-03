@@ -34,12 +34,11 @@ class LeavesController extends Controller
     {
         $current_user = Auth::user();
         $leaves = Leave::latest()->get();
-        $employees = User::paginate(10);
+        $employees = User::paginate(7);
         $my_leaves = $current_user->leaves;
         
         return view('/home',compact('current_user', 'leaves', 'employees','my_leaves'));
     }
-
 
     public function approveLeave($id)
     {

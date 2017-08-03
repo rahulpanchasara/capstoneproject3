@@ -22,7 +22,7 @@ class UsersController extends Controller
     $new_employee->leave_bal = $request->creds;
     $new_employee->save();
 
-    Session::flash('message', 'Employee successfully added to the database!');
+    Session::flash('alert', 'Employee successfully added to the database!');
 
     return back();
   }
@@ -48,7 +48,7 @@ class UsersController extends Controller
     $edit_emp->leave_bal = $request->creds;
     $edit_emp->save();
 
-    Session::flash('message', 'Profile successfully updated');
+    Session::flash('alert', 'Profile successfully updated');
 
     return back();
   }
@@ -58,7 +58,7 @@ class UsersController extends Controller
     $employee_del = User::find($id);
     $employee_del->delete();
 
-    Session::flash('message', 'Employee successfully deleted from the database');
+    Session::flash('alert', 'Employee successfully deleted from the database');
 
     return back();
   }
