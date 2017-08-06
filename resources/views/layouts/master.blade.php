@@ -33,9 +33,9 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/home') }}">
 
-                        URIN Good Company
+                        <i class="fa fa-calendar" aria-hidden="true"></i> URIN Good Company
 
                     </a>
                 </div>

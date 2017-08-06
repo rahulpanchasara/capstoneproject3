@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background: url('images/bgaerial.jpg') fixed;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -51,6 +51,11 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
+            a,
+            a:hover {
+                text-decoration: none;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -61,7 +66,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('home') }}">Home</a>
+                        <a href="{{ url('home') }}">Dashboard</a>
                     @else
                         <a href="{{ url('login') }}">Login</a>
 
@@ -71,7 +76,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Login to your account to request for leave
+                    @if (Auth::check())
+                        Go to <a href="{{ url('home') }}">Dashboard</a> to file leave
+                    @else
+                        <a href="{{ url('login') }}">Login</a> to file leave
+
+                    @endif
                 </div>
             </div>
         </div>

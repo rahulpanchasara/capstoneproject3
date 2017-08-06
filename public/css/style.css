@@ -87,3 +87,7 @@ body {
   margin: 11px 0;
 
 }
+
+.fa-calendar:before {
+  color: #2579a9;
+}

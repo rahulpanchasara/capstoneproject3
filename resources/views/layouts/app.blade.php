@@ -15,73 +15,59 @@
     <!-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> -->
 
     <style type="text/css">
-        /*.row {
-            margin-top: 60px;
-        }*/
+        html,body {
+            height: 100%;
+            background: url('images/bgaerial.jpg') fixed;
+        }
+        #app {
+            display: table !important;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+        }
+        .row-wrapper {
+            display: table-cell !important;
+        }
+        .login-panel {
+            width: 500px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .panel {
+            border-radius: 0px;
+            padding: 30px;
+        }
+        .fa-calendar:before {
+            color: #2579a9;
+        }
+        @media (max-width: 767px){
+            .login-panel {
+                width: 100%;
+            }
+        }
+        @media (min-width: 768px){
+            .row-wrapper {
+                vertical-align: middle !important;
+            }
+            .login-panel {
+                width: 500px;
+            }
+        }
+        @media (min-width: 992px){
+            .login-panel {
+                width: 500px;
+            }
+        }
     </style>
 
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        URIN Good Company ^_^
-
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav"></ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Employee Login</a></li>
-                            <!-- <li><a href="{{ route('register') }}">Register</a></li> -->
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->emp_name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
         @yield('content')
     </div>
 
-    <!-- Scripts -->
+     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://use.fontawesome.com/914230375d.js"></script>
 </body>
 </html>
