@@ -71,9 +71,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    @if (Auth::check() && Auth::user()->role!='admin')
+                    @if (Auth::user()->role!='admin')
                     Go to your <a href="{{ url('home') }}">dashboard</a> to file leave
-                    @elseif (Auth::check && Auth::user()->role=='admin')
+                    @elseif (Auth::user()->role=='admin')
                     Check and update records on dashboard
                     @else
                     Please login to your account to file your leave
