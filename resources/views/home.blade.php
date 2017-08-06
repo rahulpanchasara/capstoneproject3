@@ -27,7 +27,7 @@
     </div>
 
     <div id="leaves" class="tab-pane fade">
-        @include('partials.request')
+        @include('partials.leaves')
     </div>
 
 </div>
