@@ -71,13 +71,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    @if (Auth::user()->role!='admin')
-                    Go to your <a href="{{ url('home') }}">dashboard</a> to file leave
-                    @elseif (Auth::user()->role=='admin')
-                    Check and update records on dashboard
-                    @else
-                    Please login to your account to file your leave
-                    @endif
+                    URIN Good Company
+                    Login to file your leave request
                 </div>
 
                 </div>
