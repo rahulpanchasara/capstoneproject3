@@ -61,9 +61,9 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('home') }}">Home</a>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('login') }}">Login</a>
 
                     @endif
                 </div>
@@ -71,7 +71,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Please login to file your leave
+                    @if (Auth::check() && Auth::user()->role!='admin')
+                    Go to your <a href="{{ url('home') }}">dashboard</a> to file leave
+                    @elseif (Auth::check && Auth::user()->role=='admin')
+                    Check and update records on dashboard
+                    @else
+                    Please login to your account to file your leave
+                    @endif
                 </div>
 
                 </div>
