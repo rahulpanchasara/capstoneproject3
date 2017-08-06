@@ -71,8 +71,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    URIN Good Company
-                    Login to file your leave request
+                    <h1>URIN Good Company</h1>
+                    <p>Login to file your leave request</p>
                 </div>
             </div>
         </div>
