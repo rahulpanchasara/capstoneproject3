@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> -->
+    <link rel="icon" href="{{ url('images/agenda.png') }}" type="image/png" sizes="16x16">
 
     <style type="text/css">
         @import url('https://fonts.googleapis.com/css?family=Ubuntu');
