@@ -18,6 +18,7 @@
         html,body {
             height: 100%;
             background: url('images/bgaerial.jpg') fixed;
+            background-size: cover;
         }
         #app {
             display: table !important;
