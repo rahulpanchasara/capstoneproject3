@@ -74,8 +74,6 @@
                     URIN Good Company
                     Login to file your leave request
                 </div>
-
-                </div>
             </div>
         </div>
     </body>
