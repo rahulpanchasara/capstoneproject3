@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ url('images/agenda.png') }}" type="image/png" sizes="16x16">
 
 </head>
 <body>
@@ -114,7 +115,7 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="container-fluid">
-                <p class="text-muted">Powered by Bootstrap.</p>
+                <p class="text-muted">Powered by Bootstrap & Laravel. | Icon made by Freepik from <a href="{{ url('https://www.flaticon.com') }}">www.flaticon.com</a> </p>
             </div>
         </footer>
 

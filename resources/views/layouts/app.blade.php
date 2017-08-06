@@ -15,10 +15,13 @@
     <!-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> -->
 
     <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
         html,body {
             height: 100%;
             background: url('images/bgaerial.jpg') fixed;
             background-size: cover;
+            font-family: 'Ubuntu', sans-serif;
         }
         #app {
             display: table !important;
@@ -28,6 +31,7 @@
         }
         .row-wrapper {
             display: table-cell !important;
+            vertical-align: top;
         }
         .login-panel {
             width: 500px;
@@ -42,6 +46,9 @@
             color: #2579a9;
         }
         @media (max-width: 767px){
+            .row-wrapper {
+                vertical-align: middle !important;
+            }
             .login-panel {
                 width: 100%;
             }
